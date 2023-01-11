@@ -26,6 +26,13 @@ struct RecipeListView: View {
                 ScrollView(showsIndicators: false) {
                     LazyVStack(alignment: .leading, spacing: 10) {
                         BannerView()
+                        NavigationLink(destination:
+                        RecipeDetailView(recipe: Recipe.sampleData[0]))
+                        {
+                            RecipeTileView(recipe: Recipe.sampleData[0])
+                        } .buttonStyle(.plain)
+                        
+                        
                         ForEach(recipes, id: \.self) { recipe in
                             NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                                 RecipeTileView(recipe: recipe)

@@ -8,16 +8,46 @@
 import Foundation
 
 struct Recipe: Hashable, Codable {
+    /// 料理名
     var name: String
+    /// 材料
     var ingredients: [Ingredient]
+    /// 時間
     var cookTime: String
+    /// 人数
     var servings: String
+    /// 手順
     var steps: [String]
+    /// 写真
     var imageName: String
 }
 extension Recipe {
     static var sampleData: [Recipe] {
         [
+            Recipe(name: "ぶり大根",
+                   ingredients: [
+                    Ingredient(quantity: "2尾", name: "ブリ", emoji: "🐟" ),
+                    Ingredient(quantity: "1本", name: "大根", emoji: ""),
+                    Ingredient(quantity: "20g", name: "米", emoji: "🌾"),
+                    Ingredient(quantity: "ひとつまみ", name: "塩", emoji: "🧂"),
+                    Ingredient(quantity: "100cc", name: "水", emoji: "💧"),
+                    Ingredient(quantity: "30cc", name: "醤油", emoji: ""),
+                    Ingredient(quantity: "20cc", name: "みりん", emoji: ""),
+                    Ingredient(quantity: "50cc", name: "料理酒", emoji: "🍶"),
+                    Ingredient(quantity: "大さじ３", name: "砂糖", emoji: ""),
+                    Ingredient(quantity: "小さじ1", name: "蜂蜜", emoji: "")],
+                   cookTime: "1時間",
+                   servings: "三人前",
+                   steps: [
+                   "1. 食材を切る(ブリは半分、大根は皮を剥いて、角を取る",
+                   "2. ブリに塩と料理酒につけて臭み抜き(20分)",
+                   "3. 大根の下茹で（米の研ぎ汁と水から茹でる)20分ほど",
+                   "4. 大根が透明になったら、竹串でさして、柔らかくなっていたらザルにあげる",
+                   "5. 大根を水で濯いで、調味料を入れたタレに入れて再び煮る",
+                   "6. ブリを熱湯に潜らせてタレに入れる(20秒であげる)",
+                   "7. 20分ほど弱火で煮て、最後に蜂蜜を入れて、テリをつけて完成",
+                   ],
+                   imageName: "buri"),
             Recipe(name: "Pad Thai",
                 ingredients: [
                     Ingredient(quantity: "1 (14oz)", name: "Flat, wide rice noodles", emoji: "🍜"),
